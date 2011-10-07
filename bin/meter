@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var optimist = require('optimist'),
+    steveMeter = require('../lib');
+
+var argv = optimist.options({
+  port: {
+    alias: 'p',
+    description: 'Port for the server to run on',
+    number: true,
+    default: 8080
+  },
+  file: {
+    alias: 'f',
+    description: 'Location of the hashtags to track',
+    string: true
+  }
+}).argv;
+
+//
+// If we should print the help for this 
+// script then do so.
+//
+if (argv.h || argv.help || (!argv.f && !argv.file)) {
+  console.log([
+    'meter: Starts the twiter meter server',
+    ''
+  ].join('\n'));
+  
+  console.log(optimist.help());
+  return;
+}
+
+steveMeter.createServer(argv);
+
+console.log('Steve iSad meter listening on: ' + (argv.p || argv.port));
