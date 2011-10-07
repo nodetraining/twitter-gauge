@@ -1,0 +1,16 @@
+{
+  "name": "twitter-gauge",
+  "description": "A real-time Twitter Gauge built with socket.io for Tech@NYU",
+  "version": "0.0.1",
+  "author": "Charlie Robbins <charlie@nodejitsu.com>",
+  "main": "./lib/index.js",
+  "engine": [
+    "node >=0.4.0"
+  ],
+  "dependencies": {
+    "optimist": "0.2.x",
+    "socket.io": "0.8.x",
+    "twitter-node": "https://github.com/indexzero/twitter-node/tarball/master",
+    "node-static": "0.5.x"
+  }
+}
